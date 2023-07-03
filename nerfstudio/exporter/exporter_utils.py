@@ -26,7 +26,6 @@ from typing import List, Optional, Tuple
 
 import numpy as np
 import open3d as o3d
-import pymeshlab
 import torch
 from rich.console import Console
 from rich.progress import (
@@ -73,6 +72,7 @@ def get_mesh_from_pymeshlab_mesh(mesh: pymeshlab.Mesh) -> Mesh:
 
 
 def get_mesh_from_filename(filename: str, target_num_faces: Optional[int] = None) -> Mesh:
+    import pymeshlab
     """Get a Mesh from a filename."""
     ms = pymeshlab.MeshSet()
     ms.load_new_mesh(filename)

@@ -1,0 +1,2 @@
+#! /bin/bash
+docker run --gpus all -v /home/himalaya/Documents/2023_project/sdfstudio/outputs:/workspace/ -v /home/himalaya/.cache/:/home/user/.cache/ -p 7007:7007 --rm -it --shm-size=16gb sdfstudio:latest

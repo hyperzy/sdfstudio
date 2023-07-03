@@ -25,7 +25,6 @@ from pathlib import Path
 from typing import List, Optional, Tuple, Union
 
 import numpy as np
-import pymeshlab
 import torch
 import torch.nn.functional as F
 from rich.console import Console
@@ -151,6 +150,7 @@ class TSDF:
         # colors need an alpha channel
         v_color_matrix = np.concatenate([v_color_matrix, np.ones((v_color_matrix.shape[0], 1))], axis=-1)
 
+        import pymeshlab
         # create a new Mesh
         m = pymeshlab.Mesh(
             vertex_matrix=vertex_matrix,
