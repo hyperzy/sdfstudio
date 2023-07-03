@@ -18,7 +18,11 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from glob import glob
 from pathlib import Path
-from typing import Dict, Literal, Optional, Type
+from typing import Dict, Optional, Type
+try:
+    from typing import Literal
+except ImportError:
+    from typing_extensions import Literal
 
 import cv2
 import numpy as np
